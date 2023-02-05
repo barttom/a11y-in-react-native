@@ -4,9 +4,9 @@ import {
   NativeStackScreenProps,
 } from '@react-navigation/native-stack';
 import {NavigationProp} from '@react-navigation/native';
-import {CategoriesScreen} from '../screens/CategoriesScreen';
 import {MealsOverviewScreen} from '../screens/MealsOverviewScreen';
 import {MealDetailScreen} from '../screens/MealDetailScreen/MealDetailScreen';
+import {DrawerNavigator} from './DrawerNavigator';
 
 export type MainStackParams = {
   Home: undefined;
@@ -40,9 +40,9 @@ export const MainNavigator = () => {
       }}>
       <MainStack.Screen
         name="Home"
-        component={CategoriesScreen}
+        component={DrawerNavigator}
         options={{
-          title: 'All categories',
+          headerShown: false,
         }}
       />
       <MainStack.Screen name="MealOverview" component={MealsOverviewScreen} />

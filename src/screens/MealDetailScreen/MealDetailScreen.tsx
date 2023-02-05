@@ -6,20 +6,28 @@ import {getMealById} from '../../data/dummyData';
 import {Description} from '../../components/Description';
 import {List} from '../../components/List';
 import {IconButton} from '../../components/IconButton/IconButton';
+import {useAppContext} from '../../context/AppContext';
 
 export const MealDetailScreen = () => {
   const {params} = useRoute<MealDetailScreenProps['route']>();
   const {setOptions} = useNavigation();
   const data = getMealById(params.mealId);
+  const {favouritesMeals, toggleMeal, isFavourite} = useAppContext();
 
   useLayoutEffect(() => {
     setOptions({
       title: data?.title || '',
       headerRight: () => (
-        <IconButton name="star" color="#fff" onPress={() => {}} />
+        <IconButton
+          name={isFavourite(data?.id) ? 'star' : 'star-outline'}
+          color="#fff"
+          onPress={() => {
+            toggleMeal(data?.id);
+          }}
+        />
       ),
     });
-  }, [data, setOptions]);
+  }, [data, setOptions, favouritesMeals]);
 
   if (!data) {
     return (

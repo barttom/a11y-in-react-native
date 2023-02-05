@@ -1,6 +1,6 @@
 import React from 'react';
 import {Pressable, PressableProps, StyleSheet} from 'react-native';
-import {Feather} from '@expo/vector-icons';
+import {Ionicons} from '@expo/vector-icons';
 import {IconProps} from '@expo/vector-icons/build/createIconSet';
 
 export type IconButtonProps = {
@@ -15,7 +15,7 @@ export const IconButton = ({color, name, onPress}: IconButtonProps) => {
       accessibilityRole="button"
       onPress={onPress}
       style={({pressed}) => pressed && styles.pressed}>
-      <Feather color={color} name={name} size={20} />
+      <Ionicons color={color} name={name} size={20} />
     </Pressable>
   );
 };
