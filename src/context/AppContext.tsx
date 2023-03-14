@@ -10,8 +10,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 type AppContextType = {
   favouritesMeals: Array<string>;
-  toggleMeal: (id: string) => void;
-  isFavourite: (id: string) => boolean;
+  toggleMeal: (id?: string) => void;
+  isFavourite: (id?: string) => boolean;
 };
 type AppContextProviderProps = {
   children: ReactNode;
@@ -29,17 +29,19 @@ export const AppContextProvider = ({children}: AppContextProviderProps) => {
   >([]);
   const dataInitialized = useRef(false);
 
-  const toggleMeal = (id: string) => {
-    setFavourites(prev => {
-      if (prev.indexOf(id) > -1) {
-        return prev.filter(arrId => arrId !== id);
-      }
+  const toggleMeal = (id?: string) => {
+    if (id) {
+      setFavourites(prev => {
+        if (prev.indexOf(id) > -1) {
+          return prev.filter(arrId => arrId !== id);
+        }
 
-      return [...prev, id];
-    });
+        return [...prev, id];
+      });
+    }
   };
 
-  const isFavourite = (id: string) => favourites.indexOf(id) > -1;
+  const isFavourite = (id?: string) => favourites.indexOf(id || '') > -1;
 
   useEffect(() => {
     if (dataInitialized.current) {

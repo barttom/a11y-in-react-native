@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 
 export type DescriptionProps = {
-  duration: string;
+  duration: number;
   complexity: string;
   affordability: string;
 };
