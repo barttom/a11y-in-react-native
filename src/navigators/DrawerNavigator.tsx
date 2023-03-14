@@ -3,6 +3,7 @@ import React from 'react';
 import {Feather} from '@expo/vector-icons';
 import {CategoriesScreen} from '../screens/CategoriesScreen';
 import {FavouritesMealsScreen} from '../screens/FavouritesMealsScreen';
+import {theme} from '../theme/theme';
 
 const DrawerStack = createDrawerNavigator();
 
@@ -11,16 +12,16 @@ export const DrawerNavigator = () => {
     <DrawerStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#351401',
+          backgroundColor: theme.colors.primary500,
         },
-        headerTintColor: '#fff',
-        sceneContainerStyle: {backgroundColor: '#3f2f25'},
+        headerTintColor: theme.colors.grayscale100,
+        sceneContainerStyle: {backgroundColor: theme.colors.primary400},
         drawerContentStyle: {
-          backgroundColor: '#351401',
+          backgroundColor: theme.colors.primary500,
         },
-        drawerInactiveTintColor: '#fff',
-        drawerActiveTintColor: '#8d7e75',
-        drawerActiveBackgroundColor: '#3f2f25',
+        drawerInactiveTintColor: theme.colors.grayscale100,
+        drawerActiveTintColor: theme.colors.primary200,
+        drawerActiveBackgroundColor: theme.colors.primary400,
       }}>
       <DrawerStack.Screen
         name="All Categories"

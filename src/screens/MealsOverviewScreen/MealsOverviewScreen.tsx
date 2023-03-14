@@ -3,6 +3,7 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {getCategoryById, getMealsByCategoryId} from '../../data/dummyData';
 import {MealOverviewScreenProps} from '../../navigators';
+import {theme} from '../../theme/theme';
 import {MealItem} from './MealItem';
 
 export const MealsOverviewScreen = () => {
@@ -38,6 +39,6 @@ export const MealsOverviewScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: theme.spacing(2),
   },
 });

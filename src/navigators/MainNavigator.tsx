@@ -8,6 +8,7 @@ import {MealsOverviewScreen} from '../screens/MealsOverviewScreen';
 import {MealDetailScreen} from '../screens/MealDetailScreen';
 import {Category} from '../types/category';
 import {Meal} from '../types/meal';
+import {theme} from '../theme/theme';
 import {DrawerNavigator} from './DrawerNavigator';
 
 export type MainStackParams = {
@@ -35,10 +36,10 @@ export const MainNavigator = () => {
     <MainStack.Navigator
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#351401',
+          backgroundColor: theme.colors.primary500,
         },
-        headerTintColor: '#fff',
-        contentStyle: {backgroundColor: '#3f2f25'},
+        headerTintColor: theme.colors.grayscale100,
+        contentStyle: {backgroundColor: theme.colors.primary400},
       }}>
       <MainStack.Screen
         name="Home"

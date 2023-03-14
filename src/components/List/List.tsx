@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {theme} from '../../theme/theme';
 
 export type ListProps = {
   title?: string;
@@ -24,22 +25,22 @@ export const List = ({title, items}: ListProps) => {
 };
 
 const styles = StyleSheet.create({
-  container: {marginBottom: 16},
+  container: {marginBottom: theme.spacing(2)},
   titleWrapper: {
     borderBottomColor: '#baa79c',
     borderBottomWidth: 2,
-    paddingBottom: 4,
-    marginBottom: 4,
+    paddingBottom: theme.spacing(0.5),
+    marginBottom: theme.spacing(0.5),
   },
   title: {
-    fontSize: 18,
+    fontSize: theme.fontSize.large,
     lineHeight: 20,
-    color: '#baa79c',
+    color: theme.colors.primary100,
     textAlign: 'center',
   },
   itemWrapper: {
     marginVertical: 4,
-    backgroundColor: '#baa79c',
+    backgroundColor: theme.colors.primary100,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 4,
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
   },
   item: {
-    color: '#351401',
-    fontSize: 14,
+    color: theme.colors.primary500,
+    fontSize: theme.fontSize.small,
   },
 });

@@ -4,6 +4,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Meal} from '../../types/meal';
 import {MainNavigation} from '../../navigators';
 import {Description} from '../../components/Description';
+import {theme} from '../../theme/theme';
 
 export type MealItemProps = {data: Meal};
 
@@ -39,17 +40,17 @@ export const MealItem = ({
 
 const styles = StyleSheet.create({
   wrapper: {
-    backgroundColor: '#fff',
-    marginVertical: 16,
+    backgroundColor: theme.colors.grayscale100,
+    marginVertical: theme.spacing(2),
     borderRadius: 8,
     overflow: 'hidden',
     elevation: 4,
   },
   image: {width: '100%', height: 220},
   title: {
-    fontSize: 18,
+    fontSize: theme.fontSize.large,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingVertical: 8,
+    paddingVertical: theme.spacing(1),
   },
 });

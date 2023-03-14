@@ -7,6 +7,7 @@ import {Description} from '../../components/Description';
 import {List} from '../../components/List';
 import {IconButton} from '../../components/IconButton/IconButton';
 import {useMealsContext} from '../../context/MealsContext';
+import {theme} from '../../theme/theme';
 
 export const MealDetailScreen = () => {
   const {params} = useRoute<MealDetailScreenProps['route']>();
@@ -71,7 +72,7 @@ export const MealDetailScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: theme.spacing(2),
     alignItems: 'center',
   },
   image: {
@@ -79,11 +80,11 @@ const styles = StyleSheet.create({
     height: 360,
   },
   title: {
-    fontSize: 22,
+    fontSize: theme.fontSize.xLarge,
     fontWeight: 'bold',
-    color: '#fff',
+    color: theme.colors.grayscale100,
     textAlign: 'center',
-    marginVertical: 8,
+    marginVertical: theme.spacing(1),
   },
   detailsWrapper: {
     width: '70%',

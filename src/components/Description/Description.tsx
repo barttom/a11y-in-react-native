@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import {theme} from '../../theme/theme';
 
 export type DescriptionProps = {
   duration: number;
@@ -23,15 +24,15 @@ export const Description = ({
 
 const styles = StyleSheet.create({
   description: {
-    paddingHorizontal: 8,
-    paddingBottom: 16,
+    paddingHorizontal: theme.spacing(1),
+    paddingBottom: theme.spacing(2),
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
   descriptionItem: {
-    paddingHorizontal: 8,
-    color: '#baa79c',
-    fontSize: 14,
+    paddingHorizontal: theme.spacing(1),
+    color: theme.colors.primary100,
+    fontSize: theme.fontSize.small,
   },
 });

@@ -3,6 +3,7 @@ import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {MealItem} from '../MealsOverviewScreen/MealItem';
 import {useMealsContext} from '../../context/MealsContext';
 import {MEALS} from '../../data/dummyData';
+import {theme} from '../../theme/theme';
 
 export const FavouritesMealsScreen = () => {
   const {favouritesMeals} = useMealsContext();
@@ -30,9 +31,9 @@ export const FavouritesMealsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 16,
+    padding: theme.spacing(2),
   },
   noFound: {
-    color: '#fff',
+    color: theme.colors.grayscale100,
   },
 });
