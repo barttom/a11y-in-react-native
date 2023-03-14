@@ -8,24 +8,24 @@ import React, {
 } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-type AppContextType = {
+type MealsContextProps = {
   favouritesMeals: Array<string>;
   toggleMeal: (id?: string) => void;
   isFavourite: (id?: string) => boolean;
 };
-type AppContextProviderProps = {
+type MealsContextProviderProps = {
   children: ReactNode;
 };
-export const AppContext = createContext<AppContextType>({
+export const MealsContext = createContext<MealsContextProps>({
   favouritesMeals: [],
   toggleMeal: () => {},
   isFavourite: () => false,
 });
 const STORAGE_KEY = '@favouritesMeals';
 
-export const AppContextProvider = ({children}: AppContextProviderProps) => {
+export const MealsContextProvider = ({children}: MealsContextProviderProps) => {
   const [favourites, setFavourites] = useState<
-    AppContextType['favouritesMeals']
+    MealsContextProps['favouritesMeals']
   >([]);
   const dataInitialized = useRef(false);
 
@@ -59,15 +59,15 @@ export const AppContextProvider = ({children}: AppContextProviderProps) => {
   }, [favourites]);
 
   return (
-    <AppContext.Provider
+    <MealsContext.Provider
       value={{
         favouritesMeals: favourites,
         toggleMeal,
         isFavourite,
       }}>
       {children}
-    </AppContext.Provider>
+    </MealsContext.Provider>
   );
 };
 
-export const useAppContext = () => useContext(AppContext);
+export const useMealsContext = () => useContext(MealsContext);

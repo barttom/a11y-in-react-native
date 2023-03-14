@@ -1,11 +1,11 @@
 import React from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {MealItem} from '../MealsOverviewScreen/MealItem';
-import {useAppContext} from '../../context/AppContext';
+import {useMealsContext} from '../../context/MealsContext';
 import {MEALS} from '../../data/dummyData';
 
 export const FavouritesMealsScreen = () => {
-  const {favouritesMeals} = useAppContext();
+  const {favouritesMeals} = useMealsContext();
   const meals = MEALS.filter(({id}) => favouritesMeals.indexOf(id) > -1);
 
   if (!favouritesMeals.length) {

@@ -6,13 +6,13 @@ import {getMealById} from '../../data/dummyData';
 import {Description} from '../../components/Description';
 import {List} from '../../components/List';
 import {IconButton} from '../../components/IconButton/IconButton';
-import {useAppContext} from '../../context/AppContext';
+import {useMealsContext} from '../../context/MealsContext';
 
 export const MealDetailScreen = () => {
   const {params} = useRoute<MealDetailScreenProps['route']>();
   const {setOptions} = useNavigation();
   const data = getMealById(params.mealId);
-  const {favouritesMeals, toggleMeal, isFavourite} = useAppContext();
+  const {favouritesMeals, toggleMeal, isFavourite} = useMealsContext();
 
   useLayoutEffect(() => {
     setOptions({
