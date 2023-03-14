@@ -1,8 +1,8 @@
 import React, {useCallback} from 'react';
 import {Image, Pressable, StyleSheet, Text, View} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Meal} from '../../models/meal';
-import {MainNavigation} from '../../navigators/MainNavigator';
+import {Meal} from '../../types/meal';
+import {MainNavigation} from '../../navigators';
 import {Description} from '../../components/Description';
 
 export type MealItemProps = {data: Meal};

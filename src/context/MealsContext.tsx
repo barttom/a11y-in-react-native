@@ -7,11 +7,12 @@ import React, {
   useState,
 } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {Meal} from '../types/meal';
 
 type MealsContextProps = {
   favouritesMeals: Array<string>;
-  toggleMeal: (id?: string) => void;
-  isFavourite: (id?: string) => boolean;
+  toggleMeal: (id?: Meal['id']) => void;
+  isFavourite: (id?: Meal['id']) => boolean;
 };
 type MealsContextProviderProps = {
   children: ReactNode;
@@ -29,7 +30,7 @@ export const MealsContextProvider = ({children}: MealsContextProviderProps) => {
   >([]);
   const dataInitialized = useRef(false);
 
-  const toggleMeal = (id?: string) => {
+  const toggleMeal = (id?: Meal['id']) => {
     if (id) {
       setFavourites(prev => {
         if (prev.indexOf(id) > -1) {
@@ -41,7 +42,13 @@ export const MealsContextProvider = ({children}: MealsContextProviderProps) => {
     }
   };
 
-  const isFavourite = (id?: string) => favourites.indexOf(id || '') > -1;
+  const isFavourite = (id?: Meal['id']) => {
+    if (id) {
+      return favourites.indexOf(id) > -1;
+    }
+
+    return false;
+  };
 
   useEffect(() => {
     if (dataInitialized.current) {

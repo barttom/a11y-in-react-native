@@ -5,16 +5,18 @@ import {
 } from '@react-navigation/native-stack';
 import {NavigationProp} from '@react-navigation/native';
 import {MealsOverviewScreen} from '../screens/MealsOverviewScreen';
-import {MealDetailScreen} from '../screens/MealDetailScreen/MealDetailScreen';
+import {MealDetailScreen} from '../screens/MealDetailScreen';
+import {Category} from '../types/category';
+import {Meal} from '../types/meal';
 import {DrawerNavigator} from './DrawerNavigator';
 
 export type MainStackParams = {
   Home: undefined;
   MealOverview: {
-    categoryId: 'string';
+    categoryId: Category['id'];
   };
   MealDetail: {
-    mealId: 'string';
+    mealId: Meal['id'];
   };
 };
 export type MainNavigation = NavigationProp<MainStackParams>;

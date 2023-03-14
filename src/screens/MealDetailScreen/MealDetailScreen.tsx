@@ -46,6 +46,7 @@ export const MealDetailScreen = () => {
     complexity,
     steps,
   } = data;
+
   return (
     <ScrollView>
       <Image

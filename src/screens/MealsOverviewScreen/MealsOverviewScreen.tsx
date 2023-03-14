@@ -2,7 +2,7 @@ import React, {useLayoutEffect} from 'react';
 import {FlatList, StyleSheet, Text, View} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {getCategoryById, getMealsByCategoryId} from '../../data/dummyData';
-import {MealOverviewScreenProps} from '../../navigators/MainNavigator';
+import {MealOverviewScreenProps} from '../../navigators';
 import {MealItem} from './MealItem';
 
 export const MealsOverviewScreen = () => {

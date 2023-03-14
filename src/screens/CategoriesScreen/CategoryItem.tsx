@@ -1,8 +1,8 @@
 import React, {useCallback} from 'react';
 import {Pressable, Text, View, StyleSheet} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Category} from '../../models/category';
-import {MainNavigation} from '../../navigators/MainNavigator';
+import {Category} from '../../types/category';
+import {MainNavigation} from '../../navigators';
 
 export type CategoryItemProps = {
   data: Category;
