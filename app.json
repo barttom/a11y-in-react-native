@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "MealApp",
-    "slug": "MealApp",
+    "name": "A11yExampleApp",
+    "slug": "A11yExampleApp",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
