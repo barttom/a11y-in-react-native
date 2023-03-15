@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  extends: '@callstack',
+  extends: ['@callstack', 'plugin:react-native-a11y/all'],
   parser: '@typescript-eslint/parser',
   plugins: ['@typescript-eslint'],
   overrides: [

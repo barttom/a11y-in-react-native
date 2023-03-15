@@ -28,7 +28,7 @@ export const MealDetailScreen = () => {
         />
       ),
     });
-  }, [data, setOptions, favouritesMeals]);
+  }, [data, setOptions, favouritesMeals, isFavourite, toggleMeal]);
 
   if (!data) {
     return (

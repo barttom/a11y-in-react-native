@@ -27,7 +27,7 @@ export const List = ({title, items}: ListProps) => {
 const styles = StyleSheet.create({
   container: {marginBottom: theme.spacing(2)},
   titleWrapper: {
-    borderBottomColor: '#baa79c',
+    borderBottomColor: theme.colors.primary100,
     borderBottomWidth: 2,
     paddingBottom: theme.spacing(0.5),
     marginBottom: theme.spacing(0.5),

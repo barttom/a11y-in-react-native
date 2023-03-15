@@ -13,7 +13,7 @@ export const MealsOverviewScreen = () => {
 
   useLayoutEffect(() => {
     setOptions({title: data?.title || ''});
-  }, [data]);
+  }, [data, setOptions]);
 
   if (!data) {
     return (
