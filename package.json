@@ -7,7 +7,9 @@
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
@@ -34,7 +36,8 @@
     "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@typescript-eslint/parser": "^5.47.1",
     "eslint": "^8.31.0",
-    "eslint-plugin-react-native-a11y": "^3.3.0"
+    "eslint-plugin-react-native-a11y": "^3.3.0",
+    "husky": "^8.0.3"
   },
   "private": true
 }
