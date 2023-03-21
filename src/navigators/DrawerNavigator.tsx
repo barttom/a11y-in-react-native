@@ -53,8 +53,8 @@ export const DrawerNavigator = () => {
         name="FavouritesMeals"
         component={FavouritesMealsScreen}
         options={{
-          drawerIcon: ({size, color}) => (
-            <Feather size={size} color={color} name="star" />
+          drawerIcon: ({color}) => (
+            <Feather size={34} color={color} name="star" />
           ),
         }}
       />
