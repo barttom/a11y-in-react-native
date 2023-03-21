@@ -4,6 +4,7 @@ export const theme = {
     grayscale0: '#000',
     grayscale33: '#333',
     grayscale100: '#fff',
+    primary50: '#ececec',
     primary100: '#baa79c',
     primary200: '#8d7e75',
     primary400: '#3f2f25',
