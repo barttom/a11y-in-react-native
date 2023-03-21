@@ -26,11 +26,28 @@ export const DrawerNavigator = () => {
       <DrawerStack.Screen
         name="All Categories"
         component={CategoriesScreen}
-        options={{
-          drawerIcon: ({size, color}) => (
-            <Feather size={size} color={color} name="menu" />
+        options={({navigation}) => ({
+          headerLeft: ({tintColor}) => (
+            <Feather
+              size={34}
+              color={tintColor}
+              name="menu"
+              accessibilityLabel="Menu"
+              accessibilityHint="Press for display menu"
+              style={{marginLeft: theme.spacing(2)}}
+              onPress={navigation.toggleDrawer}
+            />
           ),
-        }}
+          drawerIcon: ({color}) => (
+            <Feather
+              size={34}
+              color={color}
+              name="menu"
+              accessibilityLabel="Menu button"
+              accessibilityHint="Press for display menu"
+            />
+          ),
+        })}
       />
       <DrawerStack.Screen
         name="FavouritesMeals"
