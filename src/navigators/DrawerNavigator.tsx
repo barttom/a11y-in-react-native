@@ -4,6 +4,7 @@ import {Feather} from '@expo/vector-icons';
 import {CategoriesScreen} from '../screens/CategoriesScreen';
 import {FavouritesMealsScreen} from '../screens/FavouritesMealsScreen';
 import {theme} from '../theme/theme';
+import {IconButton} from '../components/IconButton';
 
 const DrawerStack = createDrawerNavigator();
 
@@ -28,9 +29,9 @@ export const DrawerNavigator = () => {
         component={CategoriesScreen}
         options={({navigation}) => ({
           headerLeft: ({tintColor}) => (
-            <Feather
-              size={34}
-              color={tintColor}
+            <IconButton
+              size={40}
+              color={tintColor!}
               name="menu"
               accessibilityLabel="Menu"
               accessibilityHint="Press for display menu"
