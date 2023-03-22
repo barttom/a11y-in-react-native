@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   pill: {
-    backgroundColor: '#ffffff45',
+    backgroundColor: theme.colors.grayscale145,
     paddingVertical: theme.spacing(1),
     paddingHorizontal: theme.spacing(2),
     borderRadius: 8,
