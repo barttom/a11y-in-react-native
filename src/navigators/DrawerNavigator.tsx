@@ -4,6 +4,7 @@ import {Feather} from '@expo/vector-icons';
 import {CategoriesScreen} from '../screens/CategoriesScreen';
 import {FavouritesMealsScreen} from '../screens/FavouritesMealsScreen';
 import {theme} from '../theme/theme';
+import {IconButton} from '../components/IconButton';
 
 const DrawerStack = createDrawerNavigator();
 
@@ -26,18 +27,35 @@ export const DrawerNavigator = () => {
       <DrawerStack.Screen
         name="All Categories"
         component={CategoriesScreen}
-        options={{
-          drawerIcon: ({size, color}) => (
-            <Feather size={size} color={color} name="menu" />
+        options={({navigation}) => ({
+          headerLeft: ({tintColor}) => (
+            <IconButton
+              size={40}
+              color={tintColor!}
+              name="menu"
+              accessibilityLabel="Menu"
+              accessibilityHint="Press for display menu"
+              style={{marginLeft: theme.spacing(2)}}
+              onPress={navigation.toggleDrawer}
+            />
           ),
-        }}
+          drawerIcon: ({color}) => (
+            <Feather
+              size={34}
+              color={color}
+              name="menu"
+              accessibilityLabel="Menu button"
+              accessibilityHint="Press for display menu"
+            />
+          ),
+        })}
       />
       <DrawerStack.Screen
         name="FavouritesMeals"
         component={FavouritesMealsScreen}
         options={{
-          drawerIcon: ({size, color}) => (
-            <Feather size={size} color={color} name="star" />
+          drawerIcon: ({color}) => (
+            <Feather size={34} color={color} name="star" />
           ),
         }}
       />

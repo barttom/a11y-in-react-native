@@ -21,9 +21,16 @@ export const MealDetailScreen = () => {
       headerRight: () => (
         <IconButton
           name={isFavourite(data?.id) ? 'star' : 'star-outline'}
+          size={34}
           color="#fff"
           onPress={() => {
             toggleMeal(data?.id);
+          }}
+          accessibilityRole="button"
+          accessibilityLabel="Favourite meal toggle"
+          accessibilityHint="Select to add meal to favourites list"
+          accessibilityState={{
+            checked: isFavourite(data?.id),
           }}
         />
       ),

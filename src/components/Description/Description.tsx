@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   },
   descriptionItem: {
     paddingHorizontal: theme.spacing(1),
-    color: theme.colors.primary100,
+    color: theme.colors.primary400,
     fontSize: theme.fontSize.small,
   },
 });

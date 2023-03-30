@@ -23,7 +23,9 @@ export const CategoryItem = ({data: {title, color, id}}: CategoryItemProps) => {
         accessibilityRole="button"
         onPress={handlePress}>
         <View style={styles.innerContainer}>
-          <Text style={styles.text}>{title}</Text>
+          <View style={styles.pill}>
+            <Text style={styles.text}>{title}</Text>
+          </View>
         </View>
       </Pressable>
     </View>
@@ -53,6 +55,12 @@ const styles = StyleSheet.create({
   },
   button: {
     flex: 1,
+  },
+  pill: {
+    backgroundColor: theme.colors.grayscale145,
+    paddingVertical: theme.spacing(1),
+    paddingHorizontal: theme.spacing(2),
+    borderRadius: 8,
   },
   text: {
     fontSize: theme.fontSize.large,

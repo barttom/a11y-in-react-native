@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   itemWrapper: {
     marginVertical: 4,
-    backgroundColor: theme.colors.primary100,
+    backgroundColor: theme.colors.primary50,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 4,
